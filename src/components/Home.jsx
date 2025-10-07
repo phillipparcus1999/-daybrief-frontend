@@ -7,40 +7,56 @@ const Home = () => {
       <section className="hero">
         <div className="hero-content">
           <h1 className="brand">DayBrief</h1>
-          <p className="tagline">Start your day with motivation and positivity</p>
-          <Link to="/signup" className="cta-button">Sign Up Now</Link>
+          <p className="tagline">Receive personalized daily motivational messages via SMS</p>
+          <Link to="/signup" className="cta-button">Start Your Free Trial</Link>
         </div>
       </section>
 
       <section className="about">
-        <h2>What is DayBrief?</h2>
+        <h2>Why DayBrief?</h2>
         <p>
-          DayBrief delivers personalized motivational messages directly to your phone,
-          tailored to your schedule and preferences. Whether you need a morning boost
-          or an afternoon pick-me-up, we've got you covered.
+          Transform your mornings with positive affirmations delivered right to your phone.
+          Choose your schedule, customize your messages, and start each day inspired.
         </p>
       </section>
 
-      <section className="differences">
-        <h2>Why Choose DayBrief?</h2>
-        <div className="features">
+      <section className="features-section">
+        <h2>Key Features</h2>
+        <div className="features-grid">
           <div className="feature">
-            <h3>Personalized Timing</h3>
-            <p>Receive messages at times that work best for you, in your local timezone.</p>
+            <div className="feature-icon">⏰</div>
+            <h3>Flexible Timing</h3>
+            <p>Set messages for any time in your timezone, 1 or 2 per day.</p>
           </div>
           <div className="feature">
+            <div className="feature-icon">💬</div>
             <h3>Custom Messages</h3>
-            <p>Customize your own motivational messages or choose from our curated collection.</p>
+            <p>Personalize your own motivational quotes or use our curated collection.</p>
           </div>
           <div className="feature">
-            <h3>Flexible Frequency</h3>
-            <p>Get 1 or 2 messages per day, depending on your needs.</p>
+            <div className="feature-icon">📱</div>
+            <h3>SMS Delivery</h3>
+            <p>Reliable text messages directly to your phone, no app required.</p>
+          </div>
+        </div>
+      </section>
+
+      <section className="testimonials-section">
+        <h2>What Users Say</h2>
+        <div className="testimonials-grid">
+          <div className="testimonial">
+            <p>"DayBrief keeps me motivated every morning. The personalized messages are spot on!"</p>
+            <cite>- Alex J.</cite>
+          </div>
+          <div className="testimonial">
+            <p>"Love the flexibility. I get my boost exactly when I need it."</p>
+            <cite>- Sarah M.</cite>
           </div>
         </div>
       </section>
 
       <footer className="footer">
-        <p>&copy; 2024 DayBrief. All rights reserved.</p>
+        <p>&copy; 2024 DayBrief. Built with ❤️ for daily inspiration.</p>
       </footer>
     </div>
   );
