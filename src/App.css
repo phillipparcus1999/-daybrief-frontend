@@ -1,20 +1,16 @@
-/* =========================
-   DayBrief Brand System
-   ========================= */
 :root{
-  /* Core brand */
-  --db-blue-900:#0f172a;   /* deep navy (bubble/backgrounds) */
-  --db-blue-700:#1e3a8a;   /* brand blue start */
-  --db-blue-500:#3b82f6;   /* brand blue end */
-  --db-gray-900:#0b0f1a;   /* page background */
-  --db-gray-800:#111827;   /* section bg */
-  --db-gray-700:#1f2937;   /* card bg */
-  --db-gray-400:#9ca3af;   /* muted text */
-  --db-white:#eaf0ff;      /* text on dark */
+  --db-blue-900:#0f172a;
+  --db-blue-700:#1e3a8a;
+  --db-blue-500:#3b82f6;
+  --db-gray-900:#0b0f1a;
+  --db-gray-800:#111827;
+  --db-gray-700:#1f2937;
+  --db-gray-400:#9ca3af;
+  --db-white:#eaf0ff;
 
-  --db-orange:#f97316;     /* CTA */
+  --db-orange:#f97316;
   --db-orange-hover:#ea580c;
-  --db-cyan:#22d3ee;       /* accent (check) */
+  --db-cyan:#22d3ee;
 
   --db-border:rgba(255,255,255,.08);
   --db-shadow:0 10px 28px rgba(0,0,0,.28);
@@ -25,19 +21,14 @@
 html,body,#root{height:100%}
 body{margin:0;background:var(--db-gray-900);color:var(--db-white);font-family:Inter, 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif}
 
-/* =========================
-   Header / Nav
-   ========================= */
+/* Header / Nav */
 .header{
   position:sticky;top:0;z-index:50;
   backdrop-filter: blur(10px);
   background:linear-gradient(180deg, rgba(15,23,42,.92), rgba(15,23,42,.7));
   border-bottom:1px solid var(--db-border);
 }
-.nav{
-  max-width:1200px;margin:0 auto;padding:14px 20px;
-  display:flex;align-items:center;justify-content:space-between;
-}
+.nav{max-width:1200px;margin:0 auto;padding:14px 20px;display:flex;align-items:center;justify-content:space-between;}
 .brandmark{display:inline-flex;align-items:center;gap:.6rem;text-decoration:none;color:inherit}
 .brandmark-icon{display:block}
 .brandmark-word{font-weight:800;letter-spacing:.2px}
@@ -47,15 +38,10 @@ body{margin:0;background:var(--db-gray-900);color:var(--db-white);font-family:In
 .nav-links a:hover{opacity:1}
 .nav-links a::after{content:"";position:absolute;left:0;bottom:-6px;height:2px;width:0;background:var(--db-cyan);transition:width .2s ease}
 .nav-links a:hover::after{width:100%}
-.cta-nav{
-  background:var(--db-orange);color:#fff !important;border-radius:999px;padding:10px 18px;
-  box-shadow:0 8px 22px rgba(234,88,12,.35);border:1px solid var(--db-border)
-}
+.cta-nav{background:var(--db-orange);color:#fff !important;border-radius:999px;padding:10px 18px;box-shadow:0 8px 22px rgba(234,88,12,.35);border:1px solid var(--db-border)}
 .cta-nav:hover{background:var(--db-orange-hover);transform:translateY(-1px)}
 
-/* =========================
-   Hero
-   ========================= */
+/* Hero */
 .hero{
   background:
     radial-gradient(900px 400px at 80% -10%, rgba(34,211,238,.16), transparent 60%),
@@ -63,113 +49,54 @@ body{margin:0;background:var(--db-gray-900);color:var(--db-white);font-family:In
   padding: clamp(84px, 12vw, 140px) 20px; text-align:center; position:relative; overflow:hidden;
 }
 .hero-content{max-width:900px;margin:0 auto}
-.brand{
-  font-size: clamp(2.2rem, 4.5vw, 4rem); font-weight:900; letter-spacing:-.02em; margin:0 0 14px;
-}
-.brand .accent-text{
-  background:linear-gradient(90deg,#FFB347,#FF8A00);
-  -webkit-background-clip:text; background-clip:text; color:transparent;
-}
+.brand{font-size: clamp(2.2rem, 4.5vw, 4rem); font-weight:900; letter-spacing:-.02em; margin:0 0 14px;}
+.brand .accent-text{background:linear-gradient(90deg,#FFB347,#FF8A00);-webkit-background-clip:text;background-clip:text;color:transparent;}
 .tagline{font-size:clamp(1.05rem,1.4vw,1.35rem);opacity:.95;max-width:760px;margin:0 auto 28px;color:#e6edf9}
-.cta-button{
-  display:inline-block;background:var(--db-orange);color:#fff;text-decoration:none;
-  padding:12px 24px;border-radius:12px;font-weight:800;border:1px solid var(--db-border);
-  transition:.18s ease; box-shadow:0 10px 24px rgba(234,88,12,.35)
-}
+.cta-button{display:inline-block;background:var(--db-orange);color:#fff;text-decoration:none;padding:12px 24px;border-radius:12px;font-weight:800;border:1px solid var(--db-border);transition:.18s ease; box-shadow:0 10px 24px rgba(234,88,12,.35)}
 .cta-button:hover{background:var(--db-orange-hover);transform:translateY(-1px)}
 
-/* =========================
-   Sections / Cards
-   ========================= */
-.section-card{
-  max-width:1200px;margin:64px auto;padding: clamp(28px, 4vw, 48px) 20px;
-  background:var(--db-gray-800);border:1px solid var(--db-border);border-radius:var(--radius-lg);
-  box-shadow:var(--db-shadow);text-align:center;
-}
-.features-section h2,
-.testimonials-section h2,
-.about h2{font-size:clamp(1.6rem,2.6vw,2.3rem);margin:0 0 10px;letter-spacing:-.01em}
+/* Sections / Cards */
+.section-card{max-width:1200px;margin:64px auto;padding: clamp(28px, 4vw, 48px) 20px;background:var(--db-gray-800);border:1px solid var(--db-border);border-radius:var(--radius-lg);box-shadow:var(--db-shadow);text-align:center;}
+.features-section h2,.testimonials-section h2,.about h2{font-size:clamp(1.6rem,2.6vw,2.3rem);margin:0 0 10px;letter-spacing:-.01em}
 .section-subtitle{color:#c9d3e6;max-width:760px;margin:0 auto 24px;opacity:.95}
 
-.features-grid,.testimonials-grid{
-  display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:22px;margin-top:14px;
-}
-.feature,.testimonial{
-  background:var(--db-gray-700);border:1px solid var(--db-border);border-radius:var(--radius);
-  padding:20px;text-align:left;
-}
+.features-grid,.testimonials-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:22px;margin-top:14px;}
+.feature,.testimonial{background:var(--db-gray-700);border:1px solid var(--db-border);border-radius:var(--radius);padding:20px;text-align:left;}
 .feature-icon{font-size:2rem;margin-bottom:10px;color:var(--db-cyan)}
 .feature h3{margin:0 0 8px;font-size:1.2rem}
 .feature p,.testimonial p{margin:0;color:#dbe4ffbf;line-height:1.6}
 .testimonial cite{display:block;margin-top:10px;font-weight:800;color:var(--db-orange)}
 
-/* =========================
-   About
-   ========================= */
+/* About */
 .about p{max-width:800px;margin:.4rem auto;color:#cbd5e1;line-height:1.7}
 
-/* =========================
-   Footer
-   ========================= */
-.footer{
-  background:linear-gradient(180deg, var(--db-blue-900), #0c1224);
-  color:#e5e7eb;text-align:center;padding:22px;margin-top:72px;border-top:1px solid var(--db-border)
-}
+/* Footer */
+.footer{background:linear-gradient(180deg, var(--db-blue-900), #0c1224);color:#e5e7eb;text-align:center;padding:22px;margin-top:72px;border-top:1px solid var(--db-border)}
+.footer a{color:#eaf0ff;text-decoration:none;opacity:.9;font-weight:600}
+.footer a:hover{opacity:1;text-decoration:underline}
 
-/* =========================
-   Signup Form (works with your existing JSX)
-   ========================= */
-.signup-form{
-  display:grid;gap:1.1rem;background:var(--db-gray-800);padding:20px;border:1px solid var(--db-border);
-  border-radius:var(--radius-lg);box-shadow:var(--db-shadow)
-}
+/* Signup Form harmony */
+.signup-form{display:grid;gap:1.1rem;background:var(--db-gray-800);padding:20px;border:1px solid var(--db-border);border-radius:var(--radius-lg);box-shadow:var(--db-shadow)}
 .form-group{display:grid;gap:.5rem}
 .form-group label{font-weight:800}
 .help-text{color:#cbd5e1;font-size:.9rem}
-
-.form-group input[type="text"],
-.form-group input[type="email"],
-.form-group input[type="tel"],
-.form-group select,
-.form-group textarea,
-.time-select{
-  width:100%;background:#0f172a;border:1px solid var(--db-border);border-radius:12px;
-  color:var(--db-white);padding:.8rem .95rem;font-size:1rem;outline:none;
-  transition:border-color .15s ease, box-shadow .15s ease
-}
-.form-group input:hover,
-.form-group select:hover,
-.form-group textarea:hover,
-.time-select:hover{ border-color:rgba(255,255,255,.14) }
-.form-group input:focus,
-.form-group select:focus,
-.form-group textarea:focus,
-.time-select:focus{ border-color:var(--db-cyan); box-shadow:0 0 0 4px rgba(34,211,238,.22) }
-
+.form-group input[type="text"],.form-group input[type="email"],.form-group input[type="tel"],.form-group select,.form-group textarea,.time-select{
+  width:100%;background:#0f172a;border:1px solid var(--db-border);border-radius:12px;color:var(--db-white);padding:.8rem .95rem;font-size:1rem;outline:none;transition:border-color .15s ease, box-shadow .15s ease}
+.form-group input:hover,.form-group select:hover,.form-group textarea:hover,.time-select:hover{ border-color:rgba(255,255,255,.14) }
+.form-group input:focus,.form-group select:focus,.form-group textarea:focus,.time-select:focus{ border-color:var(--db-cyan); box-shadow:0 0 0 4px rgba(34,211,238,.22) }
 .time-picker{display:flex;flex-wrap:wrap;gap:.5rem;align-items:center}
 .time-separator{color:#cbd5e1;font-weight:700;padding:0 .25rem}
 .period-select{min-width:92px}
 .time-select{min-width:96px}
-
 .radio-group{display:flex;gap:.8rem;flex-wrap:wrap}
-.radio-group label{
-  display:inline-flex;align-items:center;gap:.5rem;background:#0f172a;border:1px solid var(--db-border);
-  padding:.55rem .8rem;border-radius:10px;cursor:pointer
-}
+.radio-group label{display:inline-flex;align-items:center;gap:.5rem;background:#0f172a;border:1px solid var(--db-border);padding:.55rem .8rem;border-radius:10px;cursor:pointer}
 .radio-group input[type="radio"]{accent-color:var(--db-orange)}
-
 .checkbox-label{display:grid;grid-template-columns:1.1rem auto;gap:.6rem}
 .checkbox-label input[type="checkbox"]{accent-color:var(--db-orange)}
-
-button[type="submit"]{
-  background:var(--db-orange);color:#fff;border:0;border-radius:999px;padding:.9rem 1.2rem;
-  font-weight:800;box-shadow:0 12px 28px rgba(234,88,12,.35);transition:.18s ease
-}
+button[type="submit"]{background:var(--db-orange);color:#fff;border:0;border-radius:999px;padding:.9rem 1.2rem;font-weight:800;box-shadow:0 12px 28px rgba(234,88,12,.35);transition:.18s ease}
 button[type="submit"]:hover{background:var(--db-orange-hover);transform:translateY(-1px)}
 
-/* =========================
-   Mobile
-   ========================= */
+/* Mobile */
 @media (max-width:768px){
   .nav{flex-direction:column;gap:10px}
   .nav-links{flex-wrap:wrap;gap:16px;justify-content:center}
