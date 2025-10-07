@@ -1,168 +1,235 @@
-/* Time picker styles */
-.time-picker {
-    display: flex;
-    align-items: center;
-    gap: 0.5rem;
-    margin-top: 0.5rem;
+/* =========================================
+   DayBrief – Signup Form (cosmetic only)
+   Works with existing JSX. No new deps.
+========================================= */
+
+/* --- Brand palette (uses your globals if present) --- */
+:root {
+  /* Use existing vars when available; else fall back */
+  --sf-bg:        var(--brand-surface, #1a2235);
+  --sf-bg-2:      var(--brand-surface-2, #232c44);
+  --sf-ink:       var(--brand-text, #eef2ff);
+  --sf-muted:     var(--brand-muted, #c7d2fe);
+  --sf-accent:    var(--brand-accent, #22d3ee);
+  --sf-cta:       var(--brand-orange, #f97316);
+  --sf-cta-hover: var(--brand-orange-dark, #ea580c);
+  --sf-ring:      rgba(34, 211, 238, 0.35);
+
+  --sf-border:    rgba(255,255,255,0.10);
+  --sf-border-2:  rgba(255,255,255,0.16);
+  --sf-shadow:    0 10px 28px rgba(0,0,0,0.35);
+
+  --sf-radius-lg: 14px;
+  --sf-radius:    12px;
+  --sf-radius-sm: 10px;
 }
 
-.time-select {
-    padding: 0.6rem;
-    border-radius: 6px;
-    border: 1px solid #ddd;
-    background-color: #ffffff;
-    color: #333;
-    font-size: 0.9rem;
-    min-width: 70px;
-    cursor: pointer;
-    transition: border-color 0.2s;
-}
-
-.time-select:focus {
-    outline: none;
-    border-color: #646cff;
-}
-
-.time-separator {
-    color: #666;
-    font-weight: bold;
-    font-size: 1.1rem;
-}
-
-.period-select {
-    min-width: 60px;
-}
-
+/* --- Form shell --- */
 .signup-form {
-    display: flex;
-    flex-direction: column;
-    gap: 1.2rem;
-    margin-top: 2rem;
+  display: grid;
+  gap: 1.1rem;
+  background: var(--sf-bg);
+  padding: 1.25rem;
+  border: 1px solid var(--sf-border);
+  border-radius: var(--sf-radius-lg);
+  box-shadow: var(--sf-shadow);
 }
 
+/* --- Groups & labels --- */
 .form-group {
-    display: flex;
-    flex-direction: column;
-    gap: 0.5rem;
+  display: grid;
+  gap: 0.5rem;
 }
 
 .form-group label {
-    font-weight: 500;
-    font-size: 0.9rem;
-    color: #333;
+  font-weight: 700;
+  color: var(--sf-ink);
 }
 
-.form-group input,
+/* helper notes under fields */
+.help-text {
+  color: var(--sf-muted);
+  font-size: 0.9rem;
+  opacity: 0.9;
+}
+
+/* --- Inputs, selects, textareas --- */
+.form-group input[type="text"],
+.form-group input[type="email"],
+.form-group input[type="tel"],
 .form-group select,
+.form-group textarea,
+.time-select {
+  width: 100%;
+  color: var(--sf-ink);
+  background: var(--sf-bg-2);
+  border: 1px solid var(--sf-border);
+  border-radius: var(--sf-radius);
+  padding: 0.8rem 0.95rem;
+  font-size: 1rem;
+  outline: none;
+  transition: border-color .15s ease, box-shadow .15s ease, background-color .15s ease;
+}
+
 .form-group textarea {
-    padding: 0.8rem;
-    border-radius: 8px;
-    border: 1px solid #ddd;
-    background-color: #ffffff;
-    color: #333;
-    font-size: 1rem;
-    transition: border-color 0.2s;
+  resize: vertical;
+  min-height: 88px;
 }
 
-.form-group input::placeholder,
-.form-group textarea::placeholder {
-    color: #777;
-}
-
+/* focus ring */
 .form-group input:focus,
 .form-group select:focus,
-.form-group textarea:focus {
-    outline: none;
-    border-color: #646cff;
+.form-group textarea:focus,
+.time-select:focus {
+  border-color: var(--sf-accent);
+  box-shadow: 0 0 0 4px var(--sf-ring);
 }
 
-.form-group textarea {
-    resize: vertical;
-    min-height: 60px;
+/* subtle hover */
+.form-group input:hover,
+.form-group select:hover,
+.form-group textarea:hover,
+.time-select:hover {
+  border-color: var(--sf-border-2);
 }
 
-.form-group select {
-    cursor: pointer;
+/* placeholders */
+::placeholder {
+  color: rgba(255,255,255,0.55);
 }
 
-/* Radio buttons */
+/* --- Time picker row --- */
+.time-picker {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+}
+
+.time-select {
+  min-width: 96px;
+}
+
+.period-select {
+  min-width: 92px;
+}
+
+.time-separator {
+  color: var(--sf-muted);
+  font-weight: 700;
+  padding: 0 0.25rem;
+}
+
+/* --- Radio group (messages per day) --- */
 .radio-group {
-    display: flex;
-    flex-direction: column;
-    gap: 0.5rem;
-    margin-top: 0.5rem;
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
 }
 
 .radio-group label {
-    display: flex;
-    align-items: center;
-    gap: 0.5rem;
-    cursor: pointer;
-    font-weight: normal;
-    margin: 0;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  background: var(--sf-bg-2);
+  border: 1px solid var(--sf-border);
+  padding: 0.55rem 0.8rem;
+  border-radius: var(--sf-radius-sm);
+  cursor: pointer;
+  user-select: none;
+  transition: border-color .15s ease, background-color .15s ease, transform .1s ease;
 }
 
 .radio-group input[type="radio"] {
-    width: auto;
-    margin: 0;
+  accent-color: var(--sf-cta);
+  transform: translateY(-1px);
 }
 
-/* Checkbox */
+.radio-group label:hover {
+  border-color: var(--sf-border-2);
+  transform: translateY(-1px);
+}
+
+/* --- Consent checkbox --- */
 .checkbox-label {
-    display: flex;
-    align-items: flex-start;
-    gap: 0.5rem;
-    cursor: pointer;
-    font-weight: normal !important;
-    margin: 0;
-    line-height: 1.4;
+  display: grid;
+  grid-template-columns: 1.1rem auto;
+  align-items: start;
+  gap: 0.6rem;
+  color: var(--sf-ink);
 }
 
 .checkbox-label input[type="checkbox"] {
-    width: auto;
-    margin: 0;
-    margin-top: 0.1rem;
+  accent-color: var(--sf-cta);
+  width: 1.1rem;
+  height: 1.1rem;
+  margin-top: 0.2rem;
 }
 
-/* Help text */
-.help-text {
-    font-size: 0.8rem;
-    color: #666;
-    margin-top: 0.25rem;
-}
-
+/* --- Submit button --- */
 button[type="submit"] {
-    margin-top: 1rem;
-    padding: 0.8rem;
-    border-radius: 8px;
-    border: 1px solid transparent;
-    background-color: #646cff;
-    color: white;
-    font-size: 1rem;
-    font-weight: 500;
-    cursor: pointer;
-    transition: background-color 0.2s;
+  background: var(--sf-cta);
+  color: #fff;
+  border: 0;
+  border-radius: 999px;
+  padding: 0.9rem 1.2rem;
+  font-weight: 800;
+  font-size: 1rem;
+  cursor: pointer;
+  box-shadow: 0 12px 28px rgba(234, 88, 12, 0.35);
+  transition: transform .12s ease, box-shadow .18s ease, background .18s ease;
 }
 
 button[type="submit"]:hover {
-    background-color: #535bf2;
+  background: var(--sf-cta-hover);
+  transform: translateY(-1px);
+  box-shadow: 0 16px 34px rgba(234, 88, 12, 0.45);
 }
 
-button[type="submit"]:disabled {
-    background-color: #ccc;
-    cursor: not-allowed;
+button[type="submit"]:focus {
+  outline: none;
+  box-shadow: 0 0 0 4px var(--sf-ring), 0 12px 28px rgba(234, 88, 12, 0.35);
 }
 
-/* Responsive design */
-@media (max-width: 480px) {
-    .signup-form {
-        gap: 1rem;
-    }
-    
-    .form-group input,
-    .form-group select,
-    .form-group textarea {
-        padding: 0.7rem;
-        font-size: 0.95rem;
-    }
+/* --- Lightweight error/valid states (optional if you set classes) --- */
+.form-group input:invalid,
+.form-group select:invalid,
+.form-group textarea:invalid {
+  /* keep subtle; browser still shows native tooltip */
+  border-color: rgba(239, 68, 68, 0.6);
+}
+
+.form-group input:valid,
+.form-group select:valid,
+.form-group textarea:valid {
+  border-color: rgba(34, 197, 94, 0.45);
+}
+
+/* --- Mobile tweaks --- */
+@media (max-width: 768px) {
+  .signup-form {
+    padding: 1rem;
+    gap: 1rem;
+    border-radius: 12px;
+  }
+
+  .time-picker {
+    gap: 0.4rem;
+  }
+
+  .time-select,
+  .period-select {
+    min-width: 88px;
+    padding: 0.7rem 0.85rem;
+    font-size: 0.95rem;
+  }
+
+  .form-group textarea {
+    min-height: 80px;
+  }
+
+  button[type="submit"] {
+    padding: 0.8rem 1rem;
+    font-size: 0.95rem;
+  }
 }

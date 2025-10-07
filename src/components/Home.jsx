@@ -1,65 +1,276 @@
-import React from 'react';
-import { Link } from 'react-router-dom';
+/* =============================
+   GLOBAL BRAND THEME
+============================= */
+:root {
+  --brand-bg: #0b1020;
+  --brand-surface: #1a2235;
+  --brand-surface-2: #232c44;
+  --brand-text: #eef2ff;
+  --brand-muted: #c7d2fe;
+  --brand-accent: #22d3ee;
+  --brand-orange: #f97316;
+  --brand-orange-dark: #ea580c;
+  --brand-blue-start: #1e3a8a;
+  --brand-blue-end: #3b82f6;
+}
 
-const Home = () => {
-  return (
-    <div className="home">
-      <section className="hero">
-        <div className="hero-content">
-          <h1 className="brand">DayBrief</h1>
-          <p className="tagline">Receive personalized daily motivational messages via SMS</p>
-          <Link to="/signup" className="cta-button">Start Your Free Trial</Link>
-        </div>
-      </section>
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
 
-      <section className="about">
-        <h2>Why DayBrief?</h2>
-        <p>
-          Transform your mornings with positive affirmations delivered right to your phone.
-          Choose your schedule, customize your messages, and start each day inspired.
-        </p>
-      </section>
+html,
+body,
+#root {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background: var(--brand-bg);
+  color: var(--brand-text);
+  scroll-behavior: smooth;
+}
 
-      <section className="features-section">
-        <h2>Key Features</h2>
-        <div className="features-grid">
-          <div className="feature">
-            <div className="feature-icon">⏰</div>
-            <h3>Flexible Timing</h3>
-            <p>Set messages for any time in your timezone, 1 or 2 per day.</p>
-          </div>
-          <div className="feature">
-            <div className="feature-icon">💬</div>
-            <h3>Custom Messages</h3>
-            <p>Personalize your own motivational quotes or use our curated collection.</p>
-          </div>
-          <div className="feature">
-            <div className="feature-icon">📱</div>
-            <h3>SMS Delivery</h3>
-            <p>Reliable text messages directly to your phone, no app required.</p>
-          </div>
-        </div>
-      </section>
+/* =============================
+   HERO SECTION
+============================= */
+.hero {
+  background: linear-gradient(135deg, var(--brand-blue-start), var(--brand-blue-end));
+  color: #fff;
+  text-align: center;
+  padding: 120px 20px;
+  position: relative;
+  overflow: hidden;
+}
 
-      <section className="testimonials-section">
-        <h2>What Users Say</h2>
-        <div className="testimonials-grid">
-          <div className="testimonial">
-            <p>"DayBrief keeps me motivated every morning. The personalized messages are spot on!"</p>
-            <cite>- Alex J.</cite>
-          </div>
-          <div className="testimonial">
-            <p>"Love the flexibility. I get my boost exactly when I need it."</p>
-            <cite>- Sarah M.</cite>
-          </div>
-        </div>
-      </section>
+.hero::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.2);
+}
 
-      <footer className="footer">
-        <p>&copy; 2024 DayBrief. Built with ❤️ for daily inspiration.</p>
-      </footer>
-    </div>
-  );
-};
+.hero-content {
+  position: relative;
+  z-index: 2;
+  max-width: 800px;
+  margin: 0 auto;
+}
 
-export default Home;
+.brand {
+  font-size: clamp(2.8rem, 5vw, 4.5rem);
+  font-weight: 900;
+  letter-spacing: 1px;
+  margin-bottom: 20px;
+  text-shadow: 0px 4px 10px rgba(0, 0, 0, 0.4);
+}
+
+.tagline {
+  font-size: 1.5rem;
+  opacity: 0.9;
+  margin-bottom: 40px;
+}
+
+.cta-button {
+  display: inline-block;
+  background: var(--brand-orange);
+  color: #fff;
+  padding: 16px 36px;
+  border-radius: 50px;
+  font-size: 1.2rem;
+  font-weight: bold;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  box-shadow: 0px 5px 20px rgba(0, 0, 0, 0.3);
+}
+
+.cta-button:hover {
+  background: var(--brand-orange-dark);
+  transform: translateY(-3px);
+  box-shadow: 0px 8px 25px rgba(0, 0, 0, 0.4);
+}
+
+/* =============================
+   FEATURES SECTION
+============================= */
+.features-section {
+  max-width: 1200px;
+  margin: 100px auto;
+  padding: 60px 20px;
+  background: var(--brand-surface);
+  border-radius: 14px;
+  text-align: center;
+  box-shadow: 0px 6px 20px rgba(0, 0, 0, 0.4);
+}
+
+.features-section h2 {
+  font-size: 2.8rem;
+  margin-bottom: 50px;
+}
+
+.features-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 40px;
+}
+
+.feature {
+  background: var(--brand-surface-2);
+  padding: 30px;
+  border-radius: 14px;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.2);
+  transition: transform 0.3s ease;
+  text-align: center;
+}
+
+.feature:hover {
+  transform: translateY(-5px);
+}
+
+.feature-icon {
+  font-size: 3rem;
+  color: var(--brand-accent);
+  margin-bottom: 20px;
+}
+
+.feature h3 {
+  font-size: 1.8rem;
+  margin-bottom: 15px;
+}
+
+.feature p {
+  font-size: 1.1rem;
+  opacity: 0.85;
+  line-height: 1.6;
+}
+
+/* =============================
+   HOW IT WORKS
+============================= */
+#how-title {
+  font-size: 2.8rem;
+  margin-bottom: 40px;
+}
+
+.features-section .feature:nth-child(1) .feature-icon { color: #38bdf8; }
+.features-section .feature:nth-child(2) .feature-icon { color: #facc15; }
+.features-section .feature:nth-child(3) .feature-icon { color: #34d399; }
+
+/* =============================
+   TESTIMONIALS
+============================= */
+.testimonials-section {
+  background: var(--brand-surface);
+  padding: 80px 20px;
+  border-radius: 14px;
+  max-width: 1200px;
+  margin: 100px auto;
+  text-align: center;
+}
+
+.testimonials-section h2 {
+  font-size: 2.8rem;
+  margin-bottom: 50px;
+}
+
+.testimonials-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 30px;
+}
+
+.testimonial {
+  background: var(--brand-surface-2);
+  padding: 30px;
+  border-radius: 14px;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.2);
+  font-size: 1.1rem;
+  line-height: 1.6;
+  transition: transform 0.3s ease;
+}
+
+.testimonial:hover {
+  transform: translateY(-5px);
+}
+
+.testimonial p {
+  font-style: italic;
+}
+
+.testimonial cite {
+  display: block;
+  margin-top: 15px;
+  font-weight: bold;
+  color: var(--brand-orange);
+}
+
+/* =============================
+   ABOUT SECTION
+============================= */
+.about {
+  max-width: 1000px;
+  margin: 100px auto;
+  padding: 60px 20px;
+  background: var(--brand-surface);
+  border-radius: 14px;
+  text-align: center;
+  box-shadow: 0 6px 24px rgba(0, 0, 0, 0.4);
+}
+
+.about h2 {
+  font-size: 2.8rem;
+  margin-bottom: 30px;
+}
+
+.about p {
+  font-size: 1.2rem;
+  line-height: 1.8;
+  color: var(--brand-muted);
+  max-width: 800px;
+  margin: 0 auto 20px auto;
+}
+
+.about .cta-button {
+  margin-top: 30px;
+}
+
+/* =============================
+   FOOTER
+============================= */
+.footer {
+  background: var(--brand-blue-start);
+  text-align: center;
+  padding: 30px;
+  font-size: 1rem;
+  color: #ffffff;
+  margin-top: 100px;
+  letter-spacing: 0.5px;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+/* =============================
+   RESPONSIVE DESIGN
+============================= */
+@media (max-width: 768px) {
+  .brand {
+    font-size: 2.8rem;
+  }
+
+  .tagline {
+    font-size: 1.2rem;
+  }
+
+  .cta-button {
+    padding: 12px 24px;
+    font-size: 1rem;
+  }
+
+  .features-grid,
+  .testimonials-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .features-section h2,
+  .testimonials-section h2,
+  .about h2 {
+    font-size: 2.2rem;
+  }
+}
