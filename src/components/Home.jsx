@@ -1,276 +1,123 @@
-/* =============================
-   GLOBAL BRAND THEME
-============================= */
-:root {
-  --brand-bg: #0b1020;
-  --brand-surface: #1a2235;
-  --brand-surface-2: #232c44;
-  --brand-text: #eef2ff;
-  --brand-muted: #c7d2fe;
-  --brand-accent: #22d3ee;
-  --brand-orange: #f97316;
-  --brand-orange-dark: #ea580c;
-  --brand-blue-start: #1e3a8a;
-  --brand-blue-end: #3b82f6;
-}
+// src/components/Home.jsx
+import React from "react";
+import { Link } from "react-router-dom";
+import "../App.css"; // make sure global styles are loaded
 
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
+export default function Home() {
+  return (
+    <div className="home" id="home">
+      {/* HERO */}
+      <section className="hero">
+        <div className="hero-content">
+          <h1 className="brand">Your day, distilled.</h1>
+          <p className="tagline">
+            Two concise reminders. The right time, the right tone — scheduled once, delivered daily.
+          </p>
+          <Link to="/signup" className="cta-button" id="signup">
+            Get Started
+          </Link>
+        </div>
+      </section>
 
-html,
-body,
-#root {
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  background: var(--brand-bg);
-  color: var(--brand-text);
-  scroll-behavior: smooth;
-}
+      {/* FEATURES */}
+      <section className="features-section" id="features">
+        <h2>Why DayBrief?</h2>
 
-/* =============================
-   HERO SECTION
-============================= */
-.hero {
-  background: linear-gradient(135deg, var(--brand-blue-start), var(--brand-blue-end));
-  color: #fff;
-  text-align: center;
-  padding: 120px 20px;
-  position: relative;
-  overflow: hidden;
-}
+        <div className="features-grid">
+          <article className="feature" aria-label="Scheduling features">
+            <div className="feature-icon" aria-hidden="true">⏰</div>
+            <h3>Scheduled to Your Rhythm</h3>
+            <p>
+              Pick up to two daily send times in simple 12-hour format. We handle time zones and delivery windows for you.
+            </p>
+          </article>
 
-.hero::before {
-  content: "";
-  position: absolute;
-  inset: 0;
-  background: rgba(0, 0, 0, 0.2);
-}
+          <article className="feature" aria-label="Message style">
+            <div className="feature-icon" aria-hidden="true">📝</div>
+            <h3>Short, Sharp, Effective</h3>
+            <p>
+              100-character cap keeps messages crisp so you actually act on them — no fluff, just focus.
+            </p>
+          </article>
 
-.hero-content {
-  position: relative;
-  z-index: 2;
-  max-width: 800px;
-  margin: 0 auto;
-}
+          <article className="feature" aria-label="Simple management">
+            <div className="feature-icon" aria-hidden="true">🎛️</div>
+            <h3>Set & Forget (But Tweak Anytime)</h3>
+            <p>
+              Change times or messages on the fly. Your preferences sync instantly without breaking your flow.
+            </p>
+          </article>
 
-.brand {
-  font-size: clamp(2.8rem, 5vw, 4.5rem);
-  font-weight: 900;
-  letter-spacing: 1px;
-  margin-bottom: 20px;
-  text-shadow: 0px 4px 10px rgba(0, 0, 0, 0.4);
-}
+          <article className="feature" aria-label="Privacy">
+            <div className="feature-icon" aria-hidden="true">🔒</div>
+            <h3>Private by Default</h3>
+            <p>
+              Secure transport and minimal data storage — we only keep what’s needed to deliver your DayBrief.
+            </p>
+          </article>
+        </div>
+      </section>
 
-.tagline {
-  font-size: 1.5rem;
-  opacity: 0.9;
-  margin-bottom: 40px;
-}
+      {/* HOW IT WORKS */}
+      <section className="features-section" aria-labelledby="how-title">
+        <h2 id="how-title">How it Works</h2>
+        <div className="features-grid">
+          <article className="feature" aria-label="Step 1">
+            <div className="feature-icon" aria-hidden="true">1️⃣</div>
+            <h3>Choose Your Times</h3>
+            <p>Select up to two daily slots (AM/PM). We convert to UTC and queue reliably.</p>
+          </article>
+          <article className="feature" aria-label="Step 2">
+            <div className="feature-icon" aria-hidden="true">2️⃣</div>
+            <h3>Write Your Briefs</h3>
+            <p>Keep each message under 100 characters. Clarity beats length every time.</p>
+          </article>
+          <article className="feature" aria-label="Step 3">
+            <div className="feature-icon" aria-hidden="true">3️⃣</div>
+            <h3>We Deliver, Daily</h3>
+            <p>You get timely nudges without managing a calendar or opening an app.</p>
+          </article>
+        </div>
+      </section>
 
-.cta-button {
-  display: inline-block;
-  background: var(--brand-orange);
-  color: #fff;
-  padding: 16px 36px;
-  border-radius: 50px;
-  font-size: 1.2rem;
-  font-weight: bold;
-  text-decoration: none;
-  transition: all 0.3s ease;
-  box-shadow: 0px 5px 20px rgba(0, 0, 0, 0.3);
-}
+      {/* TESTIMONIALS */}
+      <section className="testimonials-section" id="testimonials" aria-labelledby="testimonials-title">
+        <h2 id="testimonials-title">What People Say</h2>
 
-.cta-button:hover {
-  background: var(--brand-orange-dark);
-  transform: translateY(-3px);
-  box-shadow: 0px 8px 25px rgba(0, 0, 0, 0.4);
-}
+        <div className="testimonials-grid">
+          <blockquote className="testimonial">
+            <p>“The two-a-day cadence hits perfectly — it nudges without nagging.”</p>
+            <cite>— Beta User</cite>
+          </blockquote>
 
-/* =============================
-   FEATURES SECTION
-============================= */
-.features-section {
-  max-width: 1200px;
-  margin: 100px auto;
-  padding: 60px 20px;
-  background: var(--brand-surface);
-  border-radius: 14px;
-  text-align: center;
-  box-shadow: 0px 6px 20px rgba(0, 0, 0, 0.4);
-}
+          <blockquote className="testimonial">
+            <p>“Tiny prompts, big lift. I actually keep promises to myself now.”</p>
+            <cite>— Early Adopter</cite>
+          </blockquote>
 
-.features-section h2 {
-  font-size: 2.8rem;
-  margin-bottom: 50px;
-}
+          <blockquote className="testimonial">
+            <p>“Feels like a coach who knows exactly when to speak up.”</p>
+            <cite>— Pilot Customer</cite>
+          </blockquote>
+        </div>
+      </section>
 
-.features-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-  gap: 40px;
-}
-
-.feature {
-  background: var(--brand-surface-2);
-  padding: 30px;
-  border-radius: 14px;
-  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.2);
-  transition: transform 0.3s ease;
-  text-align: center;
-}
-
-.feature:hover {
-  transform: translateY(-5px);
-}
-
-.feature-icon {
-  font-size: 3rem;
-  color: var(--brand-accent);
-  margin-bottom: 20px;
-}
-
-.feature h3 {
-  font-size: 1.8rem;
-  margin-bottom: 15px;
-}
-
-.feature p {
-  font-size: 1.1rem;
-  opacity: 0.85;
-  line-height: 1.6;
-}
-
-/* =============================
-   HOW IT WORKS
-============================= */
-#how-title {
-  font-size: 2.8rem;
-  margin-bottom: 40px;
-}
-
-.features-section .feature:nth-child(1) .feature-icon { color: #38bdf8; }
-.features-section .feature:nth-child(2) .feature-icon { color: #facc15; }
-.features-section .feature:nth-child(3) .feature-icon { color: #34d399; }
-
-/* =============================
-   TESTIMONIALS
-============================= */
-.testimonials-section {
-  background: var(--brand-surface);
-  padding: 80px 20px;
-  border-radius: 14px;
-  max-width: 1200px;
-  margin: 100px auto;
-  text-align: center;
-}
-
-.testimonials-section h2 {
-  font-size: 2.8rem;
-  margin-bottom: 50px;
-}
-
-.testimonials-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  gap: 30px;
-}
-
-.testimonial {
-  background: var(--brand-surface-2);
-  padding: 30px;
-  border-radius: 14px;
-  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.2);
-  font-size: 1.1rem;
-  line-height: 1.6;
-  transition: transform 0.3s ease;
-}
-
-.testimonial:hover {
-  transform: translateY(-5px);
-}
-
-.testimonial p {
-  font-style: italic;
-}
-
-.testimonial cite {
-  display: block;
-  margin-top: 15px;
-  font-weight: bold;
-  color: var(--brand-orange);
-}
-
-/* =============================
-   ABOUT SECTION
-============================= */
-.about {
-  max-width: 1000px;
-  margin: 100px auto;
-  padding: 60px 20px;
-  background: var(--brand-surface);
-  border-radius: 14px;
-  text-align: center;
-  box-shadow: 0 6px 24px rgba(0, 0, 0, 0.4);
-}
-
-.about h2 {
-  font-size: 2.8rem;
-  margin-bottom: 30px;
-}
-
-.about p {
-  font-size: 1.2rem;
-  line-height: 1.8;
-  color: var(--brand-muted);
-  max-width: 800px;
-  margin: 0 auto 20px auto;
-}
-
-.about .cta-button {
-  margin-top: 30px;
-}
-
-/* =============================
-   FOOTER
-============================= */
-.footer {
-  background: var(--brand-blue-start);
-  text-align: center;
-  padding: 30px;
-  font-size: 1rem;
-  color: #ffffff;
-  margin-top: 100px;
-  letter-spacing: 0.5px;
-  border-top: 1px solid rgba(255, 255, 255, 0.1);
-}
-
-/* =============================
-   RESPONSIVE DESIGN
-============================= */
-@media (max-width: 768px) {
-  .brand {
-    font-size: 2.8rem;
-  }
-
-  .tagline {
-    font-size: 1.2rem;
-  }
-
-  .cta-button {
-    padding: 12px 24px;
-    font-size: 1rem;
-  }
-
-  .features-grid,
-  .testimonials-grid {
-    grid-template-columns: 1fr;
-  }
-
-  .features-section h2,
-  .testimonials-section h2,
-  .about h2 {
-    font-size: 2.2rem;
-  }
+      {/* ABOUT */}
+      <section className="about" id="about" aria-labelledby="about-title">
+        <h2 id="about-title">About Us</h2>
+        <p>
+          DayBrief was built around a simple idea: the right nudge at the right moment changes behavior.
+          We keep messages short, timing precise, and setup effortless — so momentum becomes your default.
+        </p>
+        <p>
+          We’re starting focused: two messages a day, clean controls, and reliable delivery.
+          From there, we’ll add quality-of-life features without the bloat — smarter templates, helpful defaults,
+          and optional dashboards for power users.
+        </p>
+        <div style={{ marginTop: 24 }}>
+          <Link to="/signup" className="cta-button">Create Your DayBrief</Link>
+        </div>
+      </section>
+    </div>
+  );
 }
