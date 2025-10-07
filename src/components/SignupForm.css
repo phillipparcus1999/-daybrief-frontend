@@ -9,9 +9,9 @@
 .time-select {
     padding: 0.6rem;
     border-radius: 6px;
-    border: 1px solid #444;
-    background-color: #2a2a2a;
-    color: white;
+    border: 1px solid #ddd;
+    background-color: #ffffff;
+    color: #333;
     font-size: 0.9rem;
     min-width: 70px;
     cursor: pointer;
@@ -24,7 +24,7 @@
 }
 
 .time-separator {
-    color: rgba(255, 255, 255, 0.6);
+    color: #666;
     font-weight: bold;
     font-size: 1.1rem;
 }
@@ -49,7 +49,7 @@
 .form-group label {
     font-weight: 500;
     font-size: 0.9rem;
-    color: rgba(255, 255, 255, 0.8);
+    color: #333;
 }
 
 .form-group input,
@@ -57,9 +57,9 @@
 .form-group textarea {
     padding: 0.8rem;
     border-radius: 8px;
-    border: 1px solid #444;
-    background-color: #2a2a2a;
-    color: white;
+    border: 1px solid #ddd;
+    background-color: #ffffff;
+    color: #333;
     font-size: 1rem;
     transition: border-color 0.2s;
 }
@@ -127,7 +127,7 @@
 /* Help text */
 .help-text {
     font-size: 0.8rem;
-    color: rgba(255, 255, 255, 0.6);
+    color: #666;
     margin-top: 0.25rem;
 }
 
@@ -149,7 +149,7 @@ button[type="submit"]:hover {
 }
 
 button[type="submit"]:disabled {
-    background-color: #444;
+    background-color: #ccc;
     cursor: not-allowed;
 }
 
