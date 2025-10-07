@@ -101,7 +101,7 @@
 }
 
 .feature h3 {
-  color: #1e3a8a;
+  color: #ffffff;
   margin: 0 0 15px 0;
   font-size: 1.5rem;
 }
@@ -224,4 +224,101 @@
 
 .signup-main {
   padding: 0 20px 20px;
+}
+
+/* Mobile Responsiveness */
+@media (max-width: 768px) {
+  .brand {
+    font-size: 2.5rem;
+  }
+
+  .tagline {
+    font-size: 1.2rem;
+  }
+
+  .cta-button {
+    font-size: 1rem;
+    padding: 12px 24px;
+  }
+
+  .features-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .testimonials-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .hero {
+    padding: 60px 20px;
+  }
+
+  .about, .features-section, .testimonials-section {
+    margin: 40px auto;
+    padding: 40px 20px;
+  }
+
+  .about h2, .features-section h2, .testimonials-section h2 {
+    font-size: 2rem;
+  }
+
+  .testimonial, .feature {
+    padding: 20px;
+  }
+
+  .signup-page {
+    margin: 20px;
+    padding: 15px;
+  }
+
+  .signup-header h1 {
+    font-size: 2rem;
+  }
+
+  .form-group input, .form-group select, .form-group textarea {
+    padding: 0.6rem;
+    font-size: 0.9rem;
+  }
+
+  .time-select {
+    padding: 0.5rem;
+  }
+
+  button[type="submit"] {
+    padding: 0.7rem;
+    font-size: 0.9rem;
+  }
+}
+For the signup form (SignupForm.css), add mobile optimization at the end:
+
+css
+/* Mobile Responsiveness for Signup Form */
+@media (max-width: 768px) {
+  .signup-form {
+    gap: 1rem;
+  }
+
+  .form-group input, .form-group select, .form-group textarea {
+    padding: 0.6rem;
+    font-size: 0.9rem;
+  }
+
+  .time-select {
+    padding: 0.5rem;
+    font-size: 0.9rem;
+  }
+
+  button[type="submit"] {
+    padding: 0.7rem;
+    font-size: 0.9rem;
+  }
+
+  .signup-page {
+    margin: 20px;
+    padding: 15px;
+  }
+
+  .signup-header h1 {
+    font-size: 2rem;
+  }
 }
