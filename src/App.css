@@ -106,3 +106,139 @@ button[type="submit"]:hover{background:var(--db-orange-hover);transform:translat
   .signup-form{margin:0 2px;padding:16px}
 }
 
+/* Layout */
+.header { position: sticky; top: 0; background: #0b1020; color: #fff; border-bottom: 1px solid #1f2a44; z-index: 50; }
+.header-inner { max-width: 1100px; margin: 0 auto; padding: 14px 16px; display: flex; align-items: center; justify-content: space-between; }
+.brand { font-weight: 800; letter-spacing: 0.5px; text-decoration: none; color: #fff; }
+
+.nav a { margin-left: 16px; text-decoration: none; color: #c9d3e7; font-weight: 600; }
+.nav a.active { color: #60a5fa; }
+.nav .cta { padding: 8px 14px; border-radius: 8px; background: linear-gradient(135deg, #3b82f6, #f97316); color: #fff; }
+
+.footer { margin-top: 48px; border-top: 1px solid #1f2a44; background: #0b1020; color: #aab6d3; }
+.footer-inner { max-width: 1100px; margin: 0 auto; padding: 18px 16px; display: flex; align-items: center; justify-content: space-between; }
+.footer-nav a { margin-left: 16px; color: #aab6d3; text-decoration: none; }
+.footer-nav a:hover { color: #fff; }
+
+.app { min-height: 100vh; background: linear-gradient(180deg, #0b1020, #11182b); color: #e6ecff; }
+.section-card { max-width: 900px; margin: 32px auto; background: #141c30; border: 1px solid #1f2a44; border-radius: 14px; padding: 24px; }
+.section-subtitle { color: #aab6d3; margin-top: -6px; margin-bottom: 16px; }
+/* Small surface cards used on Account page */
+.mini-card {
+  background: #141c30;
+  border: 1px solid #1f2a44;
+  border-radius: 12px;
+  padding: 14px;
+}
+/* Pricing page quick polish (reuses plan styles from SignupForm.css) */
+.section-card h1 { margin-top: 0; }
+
+.pricing-hero { text-align: center; margin-bottom: 8px; }
+.pricing-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px,1fr)); gap: 16px; }
+
+@media (max-width: 768px) {
+  .pricing-grid { grid-template-columns: 1fr; }
+}
+/* ---------- Home Hero ---------- */
+.hero {
+  position: relative;
+  padding: 80px 16px;
+  color: #e6ecff;
+  overflow: hidden;
+  border-bottom: 1px solid #1f2a44;
+}
+.hero-inner {
+  max-width: 1100px;
+  margin: 0 auto;
+  text-align: center;
+}
+.hero-title {
+  margin: 0 0 10px 0;
+  font-size: clamp(1.8rem, 3vw, 2.6rem);
+  font-weight: 800;
+}
+.hero-subtitle {
+  margin: 0 auto 18px auto;
+  max-width: 800px;
+  color: #aab6d3;
+  line-height: 1.6;
+}
+.hero-actions {
+  display: inline-flex;
+  gap: 12px;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+.secondary-cta {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 12px 16px;
+  border-radius: 10px;
+  text-decoration: none;
+  border: 1px solid #1f2a44;
+  color: #c9d3e7;
+  background: #141c30;
+}
+.secondary-cta:hover { color: #fff; border-color: #3b82f6; }
+
+/* subtle gradient background shape */
+.hero-bg {
+  position: absolute; inset: 0;
+  background: radial-gradient(60% 40% at 50% -10%, rgba(59,130,246,0.35) 0%, rgba(17,24,43,0) 60%),
+              radial-gradient(40% 30% at 10% 110%, rgba(249,115,22,0.25) 0%, rgba(17,24,43,0) 60%);
+  pointer-events: none;
+}
+
+/* ---------- Value strip ---------- */
+.value-strip {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px,1fr));
+  gap: 10px;
+  max-width: 1100px;
+  margin: 14px auto 24px auto;
+  padding: 0 16px;
+}
+.value-item {
+  background: #141c30;
+  border: 1px solid #1f2a44;
+  border-radius: 12px;
+  color: #c9d3e7;
+  padding: 12px;
+  display: flex; align-items: center; gap: 10px;
+}
+
+/* ---------- Features & Testimonials ---------- */
+.feature-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px,1fr));
+  gap: 14px;
+}
+.feature .link { color: #60a5fa; text-decoration: none; }
+.feature .link:hover { text-decoration: underline; }
+
+.testimonials {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px,1fr));
+  gap: 14px;
+}
+.testimonials blockquote {
+  margin: 0;
+  background: #141c30;
+  border: 1px solid #1f2a44;
+  border-radius: 12px;
+  padding: 14px;
+  color: #dbe3ff;
+  font-style: italic;
+}
+.testimonials cite {
+  display: block;
+  margin-top: 8px;
+  color: #f97316;
+  font-style: normal;
+}
+
+/* small helpers already used elsewhere */
+.section-card h2 { margin-top: 0; }
+
+

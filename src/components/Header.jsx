@@ -1,37 +1,44 @@
 import React from "react";
-import { Link } from "react-router-dom";
-import "../App.css";
+import { Link, NavLink, useNavigate } from "react-router-dom";
+import { useAuth } from "../context/AuthContext.jsx";
 
 export default function Header() {
+  const { user, subscription, signOut } = useAuth();
+  const nav = useNavigate();
+
+  const goToTrial = () => {
+    nav("/signup", { state: { plan: "pro", interval: "month" } });
+  };
+
   return (
     <header className="header">
-      <nav className="nav">
-        <Link to="/" className="brandmark" aria-label="DayBrief Home">
-          <svg width="36" height="36" viewBox="0 0 64 64" role="img" aria-label="DayBrief logo" className="brandmark-icon">
-            <defs>
-              <linearGradient id="dbSun" x1="0" x2="1" y1="0" y2="1">
-                <stop offset="0%" stopColor="#FFB347" />
-                <stop offset="100%" stopColor="#FF8A00" />
-              </linearGradient>
-            </defs>
-            <path d="M10 14c0-3.314 2.686-6 6-6h32c3.314 0 6 2.686 6 6v22c0 3.314-2.686 6-6 6H28l-10.5 8.5c-1.4 1.13-3.5.134-3.5-1.7V42c-2.878 0-4-2.686-4-6V14z" fill="#0F172A"/>
-            <path d="M16 30a16 16 0 1 1 32 0H16z" fill="url(#dbSun)"/>
-            <rect x="31" y="10" width="2" height="6" rx="1" fill="#FFD089"/>
-            <rect x="20" y="13" width="2" height="6" rx="1" transform="rotate(-40 21 16)" fill="#FFD089"/>
-            <rect x="41" y="13" width="2" height="6" rx="1" transform="rotate(40 42 16)"  fill="#FFD089"/>
-            <path d="M24 33l6 6 14-14" fill="none" stroke="#22D3EE" strokeWidth="4" strokeLinecap="round" strokeLinejoin="round"/>
-          </svg>
-          <span className="brandmark-word"><strong>Day</strong><span className="word-weak">Brief</span></span>
-        </Link>
+      <div className="header-inner">
+        <Link to="/" className="brand">DayBrief</Link>
 
-        <ul className="nav-links">
-          <li><a href="/#home">Home</a></li>
-          <li><a href="/#features">Features</a></li>
-          <li><a href="/#pricing">Pricing</a></li>
-          <li><a href="/#about">About</a></li>
-          <li><Link to="/signup" className="cta-nav">Get Started</Link></li>
-        </ul>
-      </nav>
+        <nav className="nav">
+          <NavLink to="/" end>Home</NavLink>
+          <NavLink to="/pricing">Pricing</NavLink>
+
+          {!user && (
+            <>
+              <NavLink to="/signin">Sign in</NavLink>
+              <button className="cta" onClick={goToTrial}>Start free trial</button>
+            </>
+          )}
+
+          {user && (
+            <>
+              <NavLink to="/dashboard">Dashboard</NavLink>
+              <NavLink to="/lines">Lines</NavLink>
+              <NavLink to="/account">Account</NavLink>
+              {subscription?.plan_code === "org" && <NavLink to="/broadcasts">Broadcasts</NavLink>}
+              <button onClick={signOut} style={{ marginLeft: 12 }}>Sign out</button>
+            </>
+          )}
+        </nav>
+      </div>
     </header>
   );
 }
+
+
