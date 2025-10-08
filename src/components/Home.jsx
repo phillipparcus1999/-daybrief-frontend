@@ -1,74 +1,66 @@
+// src/components/Home.jsx
 import React from "react";
-import { useNavigate, Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
 export default function Home() {
   const nav = useNavigate();
-  const goToTrial = () => nav("/signup", { state: { plan: "pro", interval: "month" } });
+  const goSignup = () => nav("/signup");
 
   return (
-    <main>
+    <main className="container">
       {/* HERO */}
-      <section className="hero">
-        <div className="hero-inner">
-          <h1 className="hero-title">Daily texts that keep you on track.</h1>
-          <p className="hero-subtitle">
-            DayBrief sends focused, bite-size messages at the times you choose.
-            Use our daily library or your own custom messages. Built for individuals,
-            families, and organizations.
-          </p>
-          <div className="hero-actions">
-            <button className="cta-button" onClick={goToTrial}>Start free trial</button>
-            <Link to="/pricing" className="secondary-cta">See pricing</Link>
-          </div>
+      <section className="hero" style={{marginTop:18}}>
+        <h1 className="brand" style={{fontSize:"3rem", margin:0}}>DayBrief</h1>
+        <p className="tagline" style={{maxWidth:720, margin:"10px auto 22px"}}>
+          A smarter way to nudge your day—schedule one or two brief, meaningful check-ins that keep you on track.
+        </p>
+        <div style={{display:"flex", gap:10, justifyContent:"center", flexWrap:"wrap"}}>
+          <button className="cta-button" onClick={goSignup}>Start free trial</button>
+          <Link className="secondary-cta" to="/pricing">See pricing</Link>
         </div>
-        <div className="hero-bg" />
-      </section>
-
-      {/* VALUE STRIP */}
-      <section className="value-strip">
-        <div className="value-item"><span>⚡</span> 30-second setup</div>
-        <div className="value-item"><span>🕑</span> Your times, your cadence</div>
-        <div className="value-item"><span>🧩</span> Custom or library content</div>
-        <div className="value-item"><span>👥</span> Lines for family/orgs</div>
       </section>
 
       {/* FEATURES */}
-      <section className="feature-grid section-card">
-        <article className="feature">
-          <h3>Pick your plan</h3>
-          <p>Base for one message/day, Pro for two, Family for up to three lines, and Organization for coordinated sends.</p>
-          <Link to="/pricing" className="link">Compare plans →</Link>
-        </article>
-        <article className="feature">
-          <h3>Choose your times</h3>
-          <p>Morning focus, afternoon reminder, evening wind-down—set it once and DayBrief delivers like clockwork.</p>
-          <Link to="/signup" className="link">Start free trial →</Link>
-        </article>
-        <article className="feature">
-          <h3>Write your own</h3>
-          <p>Add personal prompts or pick from our daily library. You can change messages whenever you want.</p>
-          <Link to="/signup" className="link">Create my brief →</Link>
-        </article>
+      <section className="section-card" style={{marginTop:22}}>
+        <h2 style={{marginBottom:8}}>What you get</h2>
+        <p className="section-subtitle">Clean, flexible reminders with real-world features.</p>
+
+        <div className="features-grid" style={{marginTop:16}}>
+          <div className="feature">
+            <h3>Custom messages</h3>
+            <p>Write your own brief, uplifting message—or use our daily library.</p>
+          </div>
+          <div className="feature">
+            <h3>Two times per day</h3>
+            <p>Schedule one or two times (AM/PM) with a simple picker. No clutter.</p>
+          </div>
+          <div className="feature">
+            <h3>Family & Org plans</h3>
+            <p>Share lines, coordinate messages, and manage everything in one place.</p>
+          </div>
+        </div>
       </section>
 
-      {/* SOCIAL PROOF */}
-      <section className="section-card">
-        <h2 style={{ marginTop: 0 }}>What users say</h2>
-        <div className="testimonials">
-          <blockquote>
-            “Simple, clean, and it actually helps me remember the right things.”
-            <cite>— Jamie, Pro plan</cite>
+      {/* TESTIMONIALS */}
+      <section className="section-card" style={{marginTop:18}}>
+        <h2 style={{marginBottom:8}}>People like simple</h2>
+        <p className="section-subtitle">Small nudges, big momentum.</p>
+        <div className="testimonials-grid" style={{marginTop:12}}>
+          <blockquote className="testimonial">
+            <p>“The 8am ping keeps me moving—short, sweet, done.”</p>
+            <cite>— Alex</cite>
           </blockquote>
-          <blockquote>
-            “We use it for our team’s quick end-of-day check-ins. Zero friction.”
-            <cite>— Alex, Organization plan</cite>
+          <blockquote className="testimonial">
+            <p>“Our team uses DayBrief to align check-ins across time zones.”</p>
+            <cite>— Priya</cite>
           </blockquote>
-          <blockquote>
-            “Our family uses it for chores and practice reminders—no more missed tasks.”
-            <cite>— Riley, Family plan</cite>
+          <blockquote className="testimonial">
+            <p>“It’s not another app I have to open. It just works.”</p>
+            <cite>— Marco</cite>
           </blockquote>
         </div>
       </section>
     </main>
   );
 }
+

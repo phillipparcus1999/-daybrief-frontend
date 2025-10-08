@@ -2,26 +2,17 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
 import { useAuth } from "../context/AuthContext.jsx";
-import "./Paywall.css";
 
 export default function Paywall() {
-  const { subscription, user } = useAuth();
+  const { subscription } = useAuth();
   const nav = useNavigate();
 
-  // Read info if available (friendly fallbacks)
   const plan = subscription?.plan_code || "base";
   const interval = subscription?.billing_interval || "month";
   const status = subscription?.status || "inactive";
 
-  // CTA: go to pricing (or billing portal when live)
-  const handleUpgrade = () => {
-    // If you add Stripe later, this can open billing portal / checkout
-    nav("/pricing", { state: { fromPaywall: true } });
-  };
-
-  const handleContact = () => {
-    window.location.href = "mailto:support@daybrief.io";
-  };
+  const handleUpgrade = () => nav("/pricing", { state: { fromPaywall: true } });
+  const handleContact = () => (window.location.href = "mailto:support@daybrief.io");
 
   return (
     <main className="paywall-root">
@@ -35,10 +26,9 @@ export default function Paywall() {
           </p>
 
           <div className="paywall-cta-row">
-            <button className="cta-button paywall-cta" onClick={handleUpgrade}>
+            <button className="cta-button" onClick={handleUpgrade}>
               View plans & upgrade
             </button>
-
             <button className="secondary-cta paywall-secondary" onClick={handleContact}>
               Contact support
             </button>
