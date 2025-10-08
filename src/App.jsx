@@ -2,7 +2,13 @@
 import React from "react";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 
+// src/App.jsx  (lives in src/)
+import React from "react";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+
 import AuthProvider from "./context/AuthContext.jsx";
+
+// shared UI (now in components/)
 import Header from "./components/Header.jsx";
 import Footer from "./components/Footer.jsx";
 import ProtectedRoute from "./components/ProtectedRoute.jsx";
@@ -10,21 +16,22 @@ import ProtectedPaidRoute from "./components/ProtectedPaidRoute.jsx";
 import SiteBanner from "./components/SiteBanner.jsx";
 import HeadTags from "./components/HeadTags.jsx";
 
-// Pages
-import Home from "./pages/Home.jsx";
-import Pricing from "./pages/Pricing.jsx";
-import SignUp from "./pages/SignUp.jsx";
-import SignIn from "./pages/SignIn.jsx";
-import Dashboard from "./pages/Dashboard.jsx";
-import Lines from "./pages/Lines.jsx";
-import AccountBilling from "./pages/AccountBilling.jsx";
-import OrgBroadcast from "./pages/OrgBroadcast.jsx";
-import Terms from "./pages/Terms.jsx";
-import Privacy from "./pages/Privacy.jsx";
-import Contact from "./pages/Contact.jsx";
-import Waitlist from "./pages/Waitlist.jsx";
-import Paywall from "./pages/Paywall.jsx";
-import NotFound from "./pages/NotFound.jsx";
+// pages (now in components/)
+import Home from "./components/Home.jsx";
+import Pricing from "./components/Pricing.jsx";
+import SignUp from "./components/SignUp.jsx";
+import SignIn from "./components/SignIn.jsx";
+import Dashboard from "./components/Dashboard.jsx";
+import Lines from "./components/Lines.jsx";
+import AccountBilling from "./components/AccountBilling.jsx";
+import OrgBroadcast from "./components/OrgBroadcast.jsx";
+import Terms from "./components/Terms.jsx";
+import Privacy from "./components/Privacy.jsx";
+import Contact from "./components/Contact.jsx";
+import Waitlist from "./components/Waitlist.jsx";
+import Paywall from "./components/Paywall.jsx";
+import NotFound from "./components/NotFound.jsx";
+
 
 export default function App() {
   return (
