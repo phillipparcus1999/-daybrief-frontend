@@ -1,18 +1,18 @@
-// src/App.jsx  (lives in src/)
+// src/App.jsx
 import React from "react";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 
 import AuthProvider from "./context/AuthContext.jsx";
 
-// shared UI (now in components/)
+// shared UI
 import Header from "./components/Header.jsx";
 import Footer from "./components/Footer.jsx";
-import ProtectedRoute from "./components/ProtectedRoute.jsx";
-import ProtectedPaidRoute from "./components/ProtectedPaidRoute.jsx";
 import SiteBanner from "./components/SiteBanner.jsx";
 import HeadTags from "./components/HeadTags.jsx";
+import ProtectedRoute from "./components/ProtectedRoute.jsx";
+import ProtectedPaidRoute from "./components/ProtectedPaidRoute.jsx";
 
-// pages (now in components/)
+// routed pages (all live in src/components/)
 import Home from "./components/Home.jsx";
 import Pricing from "./components/Pricing.jsx";
 import SignUp from "./components/SignUp.jsx";
@@ -28,15 +28,11 @@ import Waitlist from "./components/Waitlist.jsx";
 import Paywall from "./components/Paywall.jsx";
 import NotFound from "./components/NotFound.jsx";
 
-
-
 export default function App() {
   return (
     <BrowserRouter>
-      {/* Pre-live banner + noindex meta */}
       <SiteBanner />
       <HeadTags />
-
       <AuthProvider>
         <Header />
 
@@ -53,13 +49,13 @@ export default function App() {
             <Route path="/contact" element={<Contact />} />
             <Route path="/paywall" element={<Paywall />} />
 
-            {/* Auth-required (trial allowed while pre-live via ProtectedPaidRoute) */}
+            {/* Auth required */}
             <Route
               path="/dashboard"
               element={
-                <ProtectedPaidRoute>
+                <ProtectedRoute>
                   <Dashboard />
-                </ProtectedPaidRoute>
+                </ProtectedRoute>
               }
             />
             <Route
@@ -81,11 +77,9 @@ export default function App() {
             <Route
               path="/broadcasts"
               element={
-                <ProtectedPaidRoute>
-                  <ProtectedRoute requirePlan="org">
-                    <OrgBroadcast />
-                  </ProtectedRoute>
-                </ProtectedPaidRoute>
+                <ProtectedRoute requirePlan="org">
+                  <OrgBroadcast />
+                </ProtectedRoute>
               }
             />
 
