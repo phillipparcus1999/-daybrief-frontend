@@ -1,7 +1,5 @@
-// src/App.jsx
 import React from "react";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-
 import AuthProvider from "./context/AuthContext.jsx";
 
 // shared UI
@@ -12,7 +10,7 @@ import HeadTags from "./components/HeadTags.jsx";
 import ProtectedRoute from "./components/ProtectedRoute.jsx";
 import ProtectedPaidRoute from "./components/ProtectedPaidRoute.jsx";
 
-// routed pages (all live in src/components/)
+// routed pages
 import Home from "./components/Home.jsx";
 import Pricing from "./components/Pricing.jsx";
 import SignUp from "./components/SignUp.jsx";
