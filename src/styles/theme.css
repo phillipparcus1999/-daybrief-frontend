@@ -198,4 +198,36 @@ main {
 body, html {
   background: var(--bg);
 }
+.brand img { transition: filter .2s ease, transform .2s ease; }
+.brand:hover img { filter: drop-shadow(0 0 12px rgba(249,115,22,.35)); transform: translateY(-1px); }
+
+/* --- Brand Hover Glow --- */
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  text-decoration: none;
+  font-weight: 700;
+}
+
+.brand-logo {
+  width: 32px;
+  height: 32px;
+  transition: transform 0.25s ease, filter 0.25s ease;
+}
+
+.brand-wordmark {
+  color: #e6ecff;
+  font-size: 1.25rem;
+  transition: color 0.25s ease;
+}
+
+.brand:hover .brand-logo {
+  filter: drop-shadow(0 0 10px rgba(249, 115, 22, 0.45));
+  transform: translateY(-1px);
+}
+
+.brand:hover .brand-wordmark {
+  color: #f97316;
+}
 

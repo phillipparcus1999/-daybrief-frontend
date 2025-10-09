@@ -1,0 +1,37 @@
+<!-- public/brand/daybrief-logo.svg -->
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-label="DayBrief logo">
+  <defs>
+    <!-- Sunrise→Sunset ring -->
+    <linearGradient id="db-ring" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#2563eb"/>
+      <stop offset="100%" stop-color="#f97316"/>
+    </linearGradient>
+    <!-- Soft glow -->
+    <radialGradient id="db-glow" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#2563eb" stop-opacity=".32"/>
+      <stop offset="60%" stop-color="#f97316" stop-opacity=".18"/>
+      <stop offset="100%" stop-color="transparent" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+
+  <!-- Background (for favicon legibility on light tabs) -->
+  <rect width="64" height="64" rx="14" fill="#0b1020"/>
+
+  <!-- Subtle inner glow -->
+  <circle cx="32" cy="32" r="28" fill="url(#db-glow)"/>
+
+  <!-- Dynamic ring (thicker + slight shadow for depth) -->
+  <circle cx="32" cy="32" r="22" fill="none" stroke="url(#db-ring)" stroke-width="5"/>
+  <circle cx="32" cy="32" r="22" fill="none" stroke="black" stroke-opacity=".22" stroke-width="1" />
+
+  <!-- Orbit accent (suggests motion) -->
+  <path d="M10,28 C18,20 27,16 38,16 44,16 50,18 54,21"
+        fill="none" stroke="url(#db-ring)" stroke-width="3" stroke-linecap="round" opacity=".55"/>
+
+  <!-- Tiny spark (momentum cue) -->
+  <circle cx="54" cy="21" r="2.1" fill="#f97316" opacity=".9"/>
+  <circle cx="54" cy="21" r="3.4" fill="#f97316" opacity=".28"/>
+
+  <!-- DB monogram (geometric, readable at small sizes) -->
+  <path fill="#e6ecff" d="M20 20v24h9.5c6 0 10.5-4.2 10.5-10.1S35.5 24 29.5 24H24v-4h-4zm4 20v-12h5.5c4.1 0 6.6 2.3 6.6 6s-2.5 6-6.6 6H24zm21-20v24h-4V20h4z"/>
+</svg>
