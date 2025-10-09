@@ -163,4 +163,39 @@ h1, h2, h3 { color: #fff; margin: 0 0 10px 0; }
   .cta-button, .secondary-cta { width:100%; max-width:420px; }
   .paywall-cta-row { justify-content:center; }
 }
+/* === Desktop layout polish ===================================== */
+
+/* Make the page actually dark everywhere */
+#root,
+.app,
+main {
+  background: var(--bg);
+}
+
+/* Widen cards/hero on large screens so they don't look cramped */
+@media (min-width: 1024px) {
+  .container { max-width: 1280px; }
+  .hero,
+  .section-card { 
+    max-width: 1100px;   /* was 900px */
+  }
+  .hero { padding: 56px 32px; }
+  .section-card { padding: 28px; }
+}
+
+/* Ensure the header/nav doesn't collapse oddly on desktop */
+@media (min-width: 1024px) {
+  .header-inner { flex-direction: row; align-items: center; }
+  .nav { gap: 14px; flex-wrap: nowrap; }
+}
+
+/* Typographic comfort on desktop */
+@media (min-width: 1024px) {
+  p { font-size: 1.05rem; }
+}
+
+/* Safety net: if any element still shows up white, tint it dark */
+body, html {
+  background: var(--bg);
+}
 
