@@ -25,6 +25,8 @@ import Contact from "./components/Contact.jsx";
 import Waitlist from "./components/Waitlist.jsx";
 import Paywall from "./components/Paywall.jsx";
 import NotFound from "./components/NotFound.jsx";
+import About from "./components/About.jsx";
+import Testimonials from "./components/Testimonials.jsx";
 
 export default function App() {
   return (
@@ -46,6 +48,8 @@ export default function App() {
             <Route path="/privacy" element={<Privacy />} />
             <Route path="/contact" element={<Contact />} />
             <Route path="/paywall" element={<Paywall />} />
+            <Route path="/about" element={<About />} />
+            <Route path="/testimonials" element={<Testimonials />} />
 
             {/* Auth required */}
             <Route

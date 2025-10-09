@@ -19,6 +19,9 @@ export default function Header() {
           <NavLink to="/contact">Contact</NavLink>
           <NavLink to="/signin" className="secondary-cta">Sign in</NavLink>
           <NavLink to="/signup" className="cta-button">Start free trial</NavLink>
+          <NavLink to="/about">About</NavLink>
+          <NavLink to="/testimonials">Testimonials</NavLink>
+
         </nav>
       </div>
     </header>
